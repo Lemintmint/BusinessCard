@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Business Card</string>
+    <string name="name">Lemint</string>
+    <string name="title">VOCALOID PRODUCER</string>
+    <string name="twitter">Twitter</string>
+    <string name="twitter_url">https://twitter.com/le_M_int</string>
+    <string name="niconico">niconico</string>
+    <string name="niconico_url">https://www.nicovideo.jp/user/121636330</string>
+    <string name="youtube">YouTube</string>
+    <string name="youtube_url">https://www.youtube.com/channel/UCHJbC0yAotni47fFwrexqdQ</string>
+    <string name="piapro">piapro</string>
+    <string name="piapro_url">https://piapro.jp/Lemintp</string>
 </resources>
