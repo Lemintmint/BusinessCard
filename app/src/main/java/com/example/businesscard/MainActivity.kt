@@ -1,10 +1,11 @@
-package com.example.businesscard
+package com.example.businesscard//.MainActivity
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -31,12 +32,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat.startActivity
 import com.example.businesscard.ui.theme.BusinessCardTheme
-import kotlin.coroutines.jvm.internal.CompletedContinuation.context
+//import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 //import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 //import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -115,7 +116,7 @@ fun AddressCard(): Unit {
                         onClick = {
                             val intent = Intent(Intent.ACTION_VIEW,
                                 Uri.parse("https://twitter.com/le_M_int"))
-                            context.startActivity(intent)
+                            //startActivity(this@MainActivity, intent, null)
                         }
                     )
             )
