@@ -2,9 +2,11 @@ package com.example.businesscard//.MainActivity
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,6 +31,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -39,6 +43,15 @@ import com.example.businesscard.ui.theme.BusinessCardTheme
 
 //import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 //import kotlin.coroutines.jvm.internal.CompletedContinuation.context
+
+
+object FontLoader {
+    val fontFamily by lazy {
+        FontFamily (
+            Font(R.font.googlefonttest)
+        )
+    }
+}
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,22 +77,25 @@ fun NameCard(): Unit {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
-            .background(color = colorResource(id = R.color.purple_200))
+            .background(color = colorResource(id = R.color.lilac))
     ) {
         Image(
             painter = painterResource(id = R.drawable.leminticon),
             contentDescription = "Lemint's Icon",
             modifier = Modifier
-                .size(150.dp)
+                .size(180.dp)
         )
         Text(
             text = stringResource(id = R.string.name),
+            fontFamily = FontLoader.fontFamily,
             fontSize = 56.sp,
+            color = colorResource(id = R.color.purple_700),
             modifier = Modifier
         )
         Text(
             text = stringResource(id = R.string.title),
             fontSize = 24.sp,
+            color = colorResource(id = R.color.yellow),
             modifier = Modifier
         )
     }
@@ -96,7 +112,7 @@ fun AddressCard(): Unit {
     ) {
         Column(
             modifier = Modifier
-                .background(color = colorResource(id = R.color.teal_200))
+                .background(color = colorResource(id = R.color.lavender))
                 .padding(start = 100.dp, end = 100.dp, top = 16.dp, bottom = 16.dp)
         ) {
             Row(
@@ -114,7 +130,7 @@ fun AddressCard(): Unit {
                         append(stringResource(id = R.string.twitter))
                         addStyle(
                             style = MaterialTheme.typography.bodyLarge.toSpanStyle().copy(
-                                color = colorResource(id = R.color.purple_500),
+                                color = colorResource(id = R.color.blue),
                                 textDecoration = TextDecoration.Underline,
                                 fontSize = 24.sp
                             ),
@@ -150,7 +166,7 @@ fun AddressCard(): Unit {
                         append(stringResource(id = R.string.niconico))
                         addStyle(
                             style = MaterialTheme.typography.bodyLarge.toSpanStyle().copy(
-                                color = colorResource(id = R.color.purple_500),
+                                color = colorResource(id = R.color.blue),
                                 textDecoration = TextDecoration.Underline,
                                 fontSize = 24.sp
                             ),
@@ -186,7 +202,7 @@ fun AddressCard(): Unit {
                         append(stringResource(id = R.string.youtube))
                         addStyle(
                             style = MaterialTheme.typography.bodyLarge.toSpanStyle().copy(
-                                color = colorResource(id = R.color.purple_500),
+                                color = colorResource(id = R.color.blue),
                                 textDecoration = TextDecoration.Underline,
                                 fontSize = 24.sp
                             ),
@@ -220,7 +236,7 @@ fun AddressCard(): Unit {
                         append(stringResource(id = R.string.piapro))
                         addStyle(
                             style = MaterialTheme.typography.bodyLarge.toSpanStyle().copy(
-                                color = colorResource(id = R.color.purple_500),
+                                color = colorResource(id = R.color.blue),
                                 textDecoration = TextDecoration.Underline,
                                 fontSize = 24.sp
                             ),
